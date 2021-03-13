@@ -21,14 +21,8 @@ app.use(express.static("public"));
 
 let posts = [];
 
-const homePost = {
-  title: "Home",
-  body: homeStartingContent
-};
-posts.push(homePost);
-
 app.get("/", function(req, res){
-  res.render("home", {posts:posts});
+  res.render("home", {homeContent:homeStartingContent, posts:posts});
 });
 
 app.get("/about", function(req, res){
